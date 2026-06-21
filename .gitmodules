@@ -1,0 +1,6 @@
+[submodule "Bond-Hashes"]
+	path = Bond-Hashes
+	url = https://github.com/glacier-modding/Bond-Hashes.git
+[submodule "Hitman-Hashes"]
+	path = Hitman-Hashes
+	url = https://github.com/glacier-modding/Hitman-Hashes.git

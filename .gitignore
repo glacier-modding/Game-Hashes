@@ -1,0 +1,8 @@
+# Python
+__pycache__
+
+# Text files
+*.txt
+
+# Smile (or don't)
+*.sml
