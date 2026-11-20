@@ -1,7 +1,7 @@
 import json
 import os
 import argparse
-from common import GAME_FLAGS_BOND, COMBINED_FLAGS, PlatformTag, ioi_hash
+from common import GAME_FLAGS_BOND, COMBINED_FLAGS, PlatformTag, ioi_hash, repositories
 
 parser = argparse.ArgumentParser(description="Merge JSON files and generates a hash list.", allow_abbrev=False)
 parser.add_argument('version', type=int, help="Current version number to be embedded in the hash list.")
@@ -11,11 +11,6 @@ args = parser.parse_args()
 
 if not args.game:
     args.game = list(COMBINED_FLAGS.keys())
-
-repositories = [
-    "Hitman-Hashes",
-    "Bond-Hashes"
-]
 
 merged_data = []
 

@@ -48,6 +48,12 @@ jobs:
             python ./scripts/merge_smile.py ${{ steps.get_version.outputs.version }}
           fi
 
+      - name: Run custom merge_msgpack.py
+        run: |
+          if [ "${{ matrix.game }}" == "all" ]; then
+            python ./scripts/merge_msgpack.py ${{ steps.get_version.outputs.version }}
+          fi
+
       - name: Run pins.py
         run: |
           python ./scripts/pins.py
@@ -59,6 +65,7 @@ jobs:
           path: |
             ${{ matrix.game == 'all' && 'hash_list.txt' || format('hash_list_{0}.txt', matrix.game) }}
             hash_list.sml
+            hash_list.msgpack
             pins.json
             version
 
@@ -85,5 +92,6 @@ jobs:
           files: |
             latest-hashes.7z
             hash_list.sml
+            hash_list.msgpack
             pins.json
             version

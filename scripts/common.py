@@ -3,6 +3,11 @@ import json
 import hashlib
 from enum import Enum
 
+repositories = [
+    "Hitman-Hashes",
+    "Bond-Hashes"
+]
+
 GAME_FLAGS_HITMAN = {
     "alphaJuly2015": 0b00000001,
     "h1": 0b00000010,

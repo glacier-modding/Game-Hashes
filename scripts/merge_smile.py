@@ -1,6 +1,6 @@
 import json, os, argparse, brotli, time
 from newsmile import SmileEncoder
-from common import GAME_FLAGS_BOND, COMBINED_FLAGS
+from common import GAME_FLAGS_BOND, COMBINED_FLAGS, repositories
 
 parser = argparse.ArgumentParser(description="Merge JSON files and generate a hash list in Smile binary format.", allow_abbrev=False)
 parser.add_argument('version', type=int, help="Current version number to be embedded in the hash list.")
@@ -9,11 +9,6 @@ parser.add_argument('-q', '--quality', type=int, default=9, help="Quality level 
 parser.add_argument('-g', '--glacierkit', action="store_true", help="If it should be exported using GlacierKit's format.")
 parser.add_argument('-s', '--skip-compression', action="store_true", help="If brotli compression should be skipped.")
 args = parser.parse_args()
-
-repositories = [
-    "Hitman-Hashes",
-    "Bond-Hashes"
-]
 
 merged_data = [] if not args.glacierkit else {}
 
