@@ -37,7 +37,10 @@ for repo in repositories:
                 'gameFlags': entry['gameFlags']
             }
 
-packed_data = msgpack.packb(merged_data)
+packed_data = msgpack.packb({
+    'version': args.version,
+    'hashes': merged_data
+})
 
 with open(args.output, "wb") as f:
     f.write(zstd.compress(packed_data, level=9))
