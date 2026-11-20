@@ -27,7 +27,7 @@ jobs:
           python-version: '3.14'
 
       - name: Install dependencies
-        run: pip install newsmile brotli
+        run: pip install newsmile brotli msgpack
 
       - name: Get version from tag or default to 0
         id: get_version
